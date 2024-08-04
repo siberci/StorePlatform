@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using StorePIatform.Models;
+using StorePlatform.Models;
 
 namespace StorePIatform.Data
 {
@@ -9,22 +10,14 @@ namespace StorePIatform.Data
         {
         }
 
-        public DbSet<LoginViewModel> Login { get; set; }
-        public DbSet<RegisterViewModel> Register { get; set; }
+        public DbSet<ApplicationUserViewModel> User { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            // Configure the LoginViewModel entity
-            modelBuilder.Entity<LoginViewModel>(entity =>
+            modelBuilder.Entity<ApplicationUserViewModel>(entity =>
             {
-                entity.ToTable("Login");
-                entity.HasKey(e => e.Id);
-            });
-
-            // Configure the RegisterViewModel entity
-            modelBuilder.Entity<RegisterViewModel>(entity =>
-            {
-                entity.ToTable("Register");
+                entity.ToTable("User");
                 entity.HasKey(e => e.Id);
             });
 

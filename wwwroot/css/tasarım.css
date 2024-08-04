@@ -1,0 +1,57 @@
+﻿#menü {
+    height: 80px ;
+    background-color: #191970;
+    padding: 0 20px;
+}
+#logo {
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 100px;
+    color: #cfcff1;
+    float: left;
+}
+
+#logo img {
+    border-radius: 50%; /* Kenarları yuvarlatır, resmi bir daire şekline getirir */
+}
+#logo b:nth-child(1) {
+    position: relative;
+    top: 7px;
+}
+
+#logo b:nth-child(2) {
+    position: relative;
+    left: 10px;
+    top: -10px; /* Yukarıya doğru 10 piksel kaydırır */
+}
+#anasayfa {
+    background-image: url("../images/Ana_arka_plan.jpg");
+    height: 1000px !important;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+#black {
+    height: 1000px;
+    background-color: black;
+    opacity: 0.5;
+}
+
+#içerik {
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    transform: translate(-50%,-50%)
+}
+#menu2 {
+    height: 120px ;
+    background-color: #191970;
+    padding: 0 20px;
+}
+.img-fluid2 {
+    background-size: cover; /*resmi alanın içine sığdırır*/
+    max-width: 100%; /*resim, kendisine ayrılan alanın %100 ünü kullansın, dışarı taşma olmasın*/
+    height: auto;
+}

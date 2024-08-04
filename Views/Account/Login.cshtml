@@ -1,31 +1,27 @@
-﻿@model StorePIatform.Models.LoginViewModel
+﻿@model StorePlatform.Models.LoginViewModel
 
 @{
     ViewData["Title"] = "Login";
+    Layout = "_LayoutLogin";
 }
 
-<h2>@ViewData["Title"]</h2>
-
-<form asp-action="Login" method="post">
-    <div class="form-group">
-        <label asp-for="Email" class="control-label"></label>
-        <input asp-for="Email" class="form-control" />
-        <span asp-validation-for="Email" class="text-danger"></span>
+<div class="container right-panel-active">
+    <!-- Login form -->
+    <div class="container__form container--signin">
+        <form asp-action="Login" method="post" class="form" id="form2">
+            <h2 class="form__title">Login</h2>
+            <input type="email" asp-for="Email" placeholder="Email" class="input" />
+            <input type="password" asp-for="Password" placeholder="Password" class="input" />
+            
+            <button type="submit" class="btn">Login</button>
+        </form>
     </div>
-    <div class="form-group">
-        <label asp-for="Password" class="control-label"></label>
-        <input asp-for="Password" type="password" class="form-control" />
-        <span asp-validation-for="Password" class="text-danger"></span>
+    <!-- register button -->
+    <div class="container__overlay">
+        <div class="overlay">
+            <div class="overlay__panel overlay--left">
+                <a asp-action="Register"><button class="btn" id="signIn">Register</button></a>
+            </div>
+        </div>
     </div>
-    <div class="form-check">
-        <input asp-for="RememberMe" class="form-check-input" type="checkbox" />
-        <label asp-for="RememberMe" class="form-check-label"></label>
-    </div>
-    <div class="form-group">
-        <button type="submit" class="btn btn-primary">Login</button>
-    </div>
-</form>
-
-<div>
-    <a asp-action="Register">Don't have an account? Register here</a>
 </div>
